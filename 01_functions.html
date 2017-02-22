@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <script>
+        var cowImage =
+            `%c ________________________________________
+    < mooooooooooooooooooooooooooooooooooooo >
+    ----------------------------------------
+            \\   ^__^
+            \\  (oo)\\_______
+                (__)\\       )\\/\\
+                    ||----w |
+                    ||     ||`;
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">This page only uses the console, open up your DevTools.</h1>
+    </div>
+</body>
+<script>
+    /*
+    In JavaScript, functions can be declared in many ways, but only 2-3 of them are met 'in the wild'.
+    If you want to know about all the other methods: http://davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/
+    */
+
+    // using function declaration
+    function showImage() { // we declare a new function named 'showImage'
+        console.log(cowImage, "font-family:monospace");
+    }
+
+    // using a function expression
+    var showText = function () { // we assign a new function to the variable 'showText'
+        console.log('This is some random, boring and absolutely unimaginative text.');
+    }
+
+    // HERE BE DRAGONS: this is a rather advanced pattern in javascript, don't let
+    // it confuse you too much! You won't encounter it on a daily basis.
+
+    // IIFE - Immediately-invoked function expression (pronounced 'iffy')
+    var showInner = (function () { // we assign a function to the variable 'showInner'
+        return function () { // we return ANOTHER function as the result of the outer function
+            console.log('Hey, this inner function just got executed! MAGIC!')
+        }
+    })(); // using (); we immediatly execute the inner function as soon as 'showInner' is being called
+
+</script>
+
+</html>

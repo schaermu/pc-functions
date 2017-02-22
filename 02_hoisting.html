@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <script>
+        var cowImage =
+            `%c ________________________________________
+    < mooooooooooooooooooooooooooooooooooooo >
+    ----------------------------------------
+            \\   ^__^
+            \\  (oo)\\_______
+                (__)\\       )\\/\\
+                    ||----w |
+                    ||     ||`;
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">This page only uses the console, open up your DevTools.</h1>
+    </div>
+</body>
+<script>
+    /*
+    Hoisting is a behavior specific to javascript: simply put, it executes global definitions
+    BEFORE ALL OTHER CODE, no matter where you put it!
+    */
+
+    // using function declaration, a function can be called BEFORE it was defined.
+
+    showImage(); // This will throw NO error
+
+    function showImage() {
+        console.log(cowImage, "font-family:monospace");
+    }
+
+
+    // using a function expression, the function can only be called AFTER it was defined
+
+    // This will fail with an error stating that 'showText' is not a function.
+    //showText();
+
+    var showText = function () {
+        console.log('This is some random, boring and absolutely unimaginative text.');
+    }
+
+    showText(); // This will NOT fail because the function is defined
+
+</script>
+
+</html>
