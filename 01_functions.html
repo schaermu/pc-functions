@@ -34,20 +34,25 @@
     // using function declaration
     function showImage() { // we declare a new function named 'showImage'
         console.log(cowImage, 'font-family:monospace');
+
+        // you can even declare a function expression inside a function declaration!
+        var someThing = function () {
+            console.log('Amazing text');
+        }
+        // ...but you can't do it vice-versa! And you can only call 'someThing' inside this function declaration.
     }
-
-
-
-
 
     // using a function expression
     var showText = function () { // we assign a new function to the variable 'showText'
         console.log('This is some random, boring and absolutely unimaginative text.');
     }
 
-
-
-
+    // using function expressions, you can declare functions inside other structures (if/else/for/while/etc.)
+    if (cowImage.length > 0) {
+        var temporaryFunction = function () {
+            console.log('hello dere');
+        }
+    } 
 
     // HERE BE DRAGONS: this is a rather advanced pattern in javascript, don't let
     // it confuse you too much! You won't encounter it on a daily basis.

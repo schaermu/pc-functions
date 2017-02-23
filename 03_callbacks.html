@@ -50,29 +50,36 @@
     }
 
     // example 1: we want to display our fancy cow image to the user after 1 seconds
-    setTimeout(function () {
-        showImage();
-    }, 1 * 1000);
+    setTimeout(
+        function () {
+            console.log('1 second has passed');
+            showImage();
+        }
+    , 1 * 1000);
 
     // this can also be written in a more concise way (called after 2 seconds):
     setTimeout(showImage, 2 * 1000);
 
     // example 2: we want to display the text EVERY TIME the user presses the 'a' key
-    window.addEventListener('keydown', function (e) {
-        // keyCode 65 is 'a' (http://keycode.info/)
-        if (e.keyCode === 65) {
-            showText();
+    window.addEventListener('keydown', 
+        function (event) {
+            // keyCode 65 is 'a' (http://keycode.info/)
+            if (event.keyCode === 66) {
+                showText();
+            }
         }
-    });
+    );
 
     // we wait until jQuery tells us (-> calls us back) to say its ok to manipulate the DOM
     $(document).ready(function () {
         // example 4: we want to display a real cow in a div as soon as the 'Show me a real cow, ffs!' button was clicked
-        $('button').on('click', function () {
-            $('.here-be-le-cow').html(
-                '<img class="img-responsive" src="http://cdn.modernfarmer.com/wp-content/uploads/2014/09/cowhero2.jpg" />'
-            );
-        });
+        $('button').on('click',
+            function () {
+                $('.here-be-le-cow').html(
+                    '<img class="img-responsive" src="http://cdn.modernfarmer.com/wp-content/uploads/2014/09/cowhero2.jpg" />'
+                );
+            }
+        );
     });
 </script>
 

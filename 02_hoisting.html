@@ -39,11 +39,16 @@
         console.log(cowImage, "font-family:monospace");
     }
 
-
     // using a function expression, the function can only be called AFTER it was defined
 
     // This will fail with an error stating that 'showText' is not a function.
-    //showText();
+    // showText();
+
+    if (cowImage.length === 0) {
+        var someThing = function () {
+            console.log('Amazing text');
+        }
+    }
 
     var showText = function () {
         console.log('This is some random, boring and absolutely unimaginative text.');
